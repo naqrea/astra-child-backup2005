@@ -1,0 +1,519 @@
+/*
+Theme Name: Astra Child
+Template: astra
+Version: 1.0.0
+*/
+
+/*
+Theme Name: Astra Child
+Template: Astra
+Version: 1.0.0
+Description: Thème enfant personnalisé pour marketplace de bons cadeaux d'expériences
+*/
+
+/* Variables de couleurs */
+:root {
+    --primary-color: #471F24;
+    --secondary-color: #F83A3D;
+    --text-color: #471F24;
+    --light-text: #777777;
+    --background-light: #f9f9f9;
+    --background-white: #ffffff;
+    --border-color: #e5e5e5;
+    --transition: all 0.3s ease;
+}
+
+
+.ast-archive-title {
+    display: none;
+}
+
+/* Bannière d'introduction */
+.experience-marketplace-banner {
+    text-align: center;
+    margin: 3rem 0 1rem 0;
+}
+
+
+.banner-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Structure principale */
+.experience-marketplace-container {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Sidebar */
+.experience-sidebar {
+    flex: 0 0 280px;
+}
+
+.sidebar-inner {
+    position: sticky;
+    top: 30px;
+}
+
+.sidebar-block {
+    background-color: var(--background-white);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-block h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Formulaire de recherche */
+.experience-search-form {
+    position: relative;
+}
+
+.search-field-container {
+    position: relative;
+}
+
+.search-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.search-field:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.search-submit {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-submit:hover {
+    color: var(--primary-color);
+}
+
+/* Résultats de recherche en direct */
+.live-search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.live-result-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.live-result-item:last-child {
+    border-bottom: none;
+}
+
+.live-result-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+}
+
+.live-result-item:hover {
+    background-color: rgba(58, 74, 100, 0.05);
+}
+
+/* Catégories */
+.experience-categories {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.experience-categories a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    transition: var(--transition);
+}
+
+.experience-categories a:hover {
+    color: var(--secondary-color);
+}
+
+/* Filtres de prix */
+.price-ranges {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.price-ranges a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    transition: var(--transition);
+}
+
+.price-ranges a:hover {
+    color: var(--secondary-color);
+}
+
+/* Zone des produits */
+.experience-products-area {
+    flex: 1;
+}
+
+/* Barre d'outils */
+.experience-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--background-white);
+}
+
+.experience-sorting select {
+    padding: 0.5rem;
+    background-color: var(--background-white);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+
+/* Card design */
+.experience-card {
+    height: 100%;
+    transition: var(--transition);
+    position: relative;
+}
+
+.experience-card-inner {
+    background-color: var(--background-white);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+
+/* Badge de catégorie */
+.experience-category-badge {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    background-color: #F5F5F5;
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    z-index: 2;
+    font-weight: 500;
+    border-radius: 0.25rem;
+}
+
+/* Image */
+.experience-image-link {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.experience-image {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.experience-card-inner:hover .experience-image img {
+    transform: scale(1.05);
+}
+
+/* Contenu de la carte */
+.experience-card-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.experience-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+    align-items: flex-start;
+}
+
+.experience-title {
+    font-size: 1.25rem;
+    margin: 0;
+    flex: 1;
+}
+
+.experience-title a {
+    text-decoration: none;
+}
+
+.experience-price {
+    font-weight: bold;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+.experience-excerpt {
+    color: var(--light-text);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Pied de carte */
+.experience-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience-actions {
+    width: 100%;
+}
+
+.experience-vendor {
+    font-size: 0.85rem;
+    color: var(--light-text);
+}
+
+.vendor-label {
+    opacity: 0.7;
+}
+
+.experience-details-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.experience-details-button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Pagination */
+.experience-pagination {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.experience-pagination .page-numbers {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    background-color: var(--background-white);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.experience-pagination .page-numbers.current {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.experience-pagination .page-numbers:hover:not(.current) {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Message pas de produits */
+.no-experiences-found {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--background-white);
+}
+
+.ast-container {
+    flex-direction: column;
+}
+
+.products, .columns-3 {
+    column-gap: 0.5rem;
+}
+
+.ast-grid-common-col {
+    padding: 0 0.5rem !important;
+}
+
+.ast-archive-description {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .experience-marketplace-container {
+        flex-direction: column;
+    }
+    
+    .experience-sidebar {
+        flex: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    .sidebar-inner {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-toolbar {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .experience-products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .experience-products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+    }
+    
+    .experience-price {
+        margin-top: 0.5rem;
+    }
+}
+
+
+/* PAGE BOUTIQUE VENDEUR */
+.ast-woocommerce-container {     
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 1rem; 
+}
+
+.store-avatar-wrapper:hover .store-name-wrapper .store-name {
+    opacity: 0; 
+}
+
+.store-avatar-wrapper:hover .store-name-wrapper .view-experiences-btn {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.store-avatar-wrapper:hover .store-name-wrapper .view-experiences-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.store-avatar-wrapper {
+    position: relative;
+    height: 480px !important;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.store-avatar-logo-wrapper .avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.store-name-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    order: -1;
+    margin-bottom: 0.5rem;
+}
+
+.store-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 3rem !important;
+    font-weight: 500 !important;
+    color: var(--primary-color);
+}
+
+.view-experiences-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.view-experiences-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.store-subtitles {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+
